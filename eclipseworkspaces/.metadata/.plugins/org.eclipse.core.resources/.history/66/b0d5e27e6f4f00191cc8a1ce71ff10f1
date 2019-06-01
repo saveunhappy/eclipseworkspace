@@ -1,0 +1,7 @@
+package com.mypack.util;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class Mybatisutil1 {
+	private static SqlSessionFactory session
+}

@@ -1,0 +1,38 @@
+1543121581462	Delete element
+1543122145402	Rename resource 'index.html'
+1543122316351	Rename resource '项目'
+1543122430439	Rename resource 'webroot'
+1543122441388	Rename resource 'webRoot'
+1543122525641	Delete element
+1543122559979	Delete element
+1543122789756	Rename resource 'index.jsp'
+1543123534463	Delete element
+1543123537467	Delete element
+1543123540224	Delete element
+1543124686888	Rename resource 'body.jsp'
+1543124699965	Move file
+1543124702499	Move file
+1543124704159	Move file
+1543125349779	Rename resource 'login.jsp'
+1543129968536	Rename resource 'extract'
+1543130198304	Rename resource 'shoppingcart_body.jsp'
+1543130227721	Rename resource 'shoppingcart.jsp'
+1543139524262	Rename package 'com._520if._shopping._dao'
+1543139559616	Rename package 'com._520if._shopping._dao._Impl'
+1543139600930	Rename package 'com._520if._shopping._domain'
+1543139616078	Rename package 'com._zz'
+1543139640789	Rename package 'com._zz._it'
+1543139657091	Rename package 'com._zz_it'
+1543139730352	Rename package 'com._520if._shopping.util'
+1543139760181	Rename package 'com._520if._shopping.handler'
+1543140087893	Delete element
+1543140350455	Rename package 'com._520if._shopping._test'
+1543140818133	Rename package 'com._520if._shopping.web.servlet'
+1543142091507	Rename resource 'shpooingcart.jsp'
+1543379343966	Copy files
+1543379413960	Delete element
+1543412749349	Delete element
+1543412988025	Rename package 'com._520if._shopping.query'
+1543413062518	Rename package 'com._520if._shopping.page'
+1543413350094	Move compilation unit
+1543476246973	Rename package 'com._520if._shoppingcart'

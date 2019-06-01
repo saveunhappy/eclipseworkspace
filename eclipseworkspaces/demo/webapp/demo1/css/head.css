@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
+}
+.gege{
+	text-decoration: none;
+}
+#top {
+	background-color: rgb(238, 238, 238);
+	height: 18px;
+}
+
+#top_next {}
+
+#location {
+	width: 300px;
+	text-align: right;
+	display: inline-block;
+}
+
+#login {
+	float: right;
+	width: 530px;
+}
+
+.login li {
+	float: left;
+	margin-left: 30px;
+	color: r;
+	font-size: 12px;
+}
+
+.shuxian {
+	color: rgb(210, 222, 222);
+}
+
+.haigou {
+	margin-left: 250px;
+	margin-top: 20px;
+	width: 200px;
+	display: inline-block;
+}
+
+#serch {
+	margin-top: 30px;
+	display: inline-block;
+	margin-left: 10px;
+	position: absolute;
+	border: 1px solid #e4393c;
+	width: 300px;
+	height: 25px;
+}
+
+#lookfor {
+	width: 28px;
+	height: 28px;
+	background-position-x: center;
+	display: inline-block;
+	margin-left: 312px;
+	margin-top: 50px;
+	position: relative;
+	top: -37px;
+}
+
+.search11 {
+	position: relative;
+	font-size: 25px;
+	color: white;
+}
+
+.login1 li {
+	float: left;
+	margin-left: 10px;
+}
+
+.login1 {
+	margin-left: 455px;
+	margin-top: -30px;
+	height: 20px;
+	width: 500px;
+}
+
+.gaoji {
+	margin-left: 50px;
+	display: inline-block;
+	position: relative;
+	width: 110px;
+	text-align: right;
+	color: green;
+}
+
+#shoppingcart {
+	display: inline-block;
+	width: 150px;
+	height: 35px;
+	background: #e4393c;
+	margin-left: 1000px;
+	margin-top: -700px;
+}
+
+.search111 {
+	line-height: 35px;
+	position: relative;
+	font-size: 24px;
+	color: white;
+	margin-top: 4px;
+}
+
+#d1 {
+	margin-left: 50px;
+	font-size: 16px;
+	margin-top: -22px;
+	color: white;
+}
+
+.fenlei {
+	background: #E4393C;
+	display: inline-block;
+	width: 210px;
+	margin-left: 250px;
+	line-height: 20px;
+	height: 35px;
+	margin-top: 20px;
+}
+
+.search1111 {
+	line-height: 35px;
+	position: relative;
+	font-size: 24px;
+	color: white;
+	margin-top: 4px;
+	float: right;
+	margin-top: -25px;
+	margin-left: -10px;
+}
+
+.dd {
+	display: inline-block;
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	margin-left: 50px;
+}
+
+.line {
+	width: 100%;
+	height: 4px;
+	background: #E4393C;
+	margin-top: -10px;
+}

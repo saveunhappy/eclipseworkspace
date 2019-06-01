@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.mapper.EmployeeMapper">
+
+
+	<resultMap type="Employee" id="BaseResultMap">
+	
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<association property="dept"
+		
+		select="com.mypack.mapper.DepartmentMapper.get"
+		column="dept_id"
+		/>
+			
+	</resultMap>	
+	
+	<select id="ListAll" resultMap="BaseResultMap">
+	select id,name,dept_id from employee
+	</select>
+	<insert id="save" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO employee (name,dept_id) VALUES (#{name},#{dept.id})
+	</insert>
+	<select id="get" resultMap="BaseResultMap">
+		SELECT id,name,dept_id from employee where id = #{id}
+	</select>
+
+</mapper>

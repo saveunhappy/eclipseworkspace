@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item value="844" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="559" key="DIALOG_HEIGHT"/>
+		<item value="10" key="DIALOG_X_ORIGIN"/>
+		<item value="143" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.templates.TemplatePreferencePage$EditTemplateDialog_dialogBounds">
+		<item value="725" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="419" key="DIALOG_HEIGHT"/>
+		<item value="144" key="DIALOG_X_ORIGIN"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="." key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="."/>
+			<item value="，"/>
+			<item value="btn_input"/>
+			<item value="s:select"/>
+			<item value="新增"/>
+			<item value="department"/>
+			<item value="&lt;s:f"/>
+			<item value="加入购物车"/>
+			<item value="&lt;s:d"/>
+			<item value="${item.good.price*item.num"/>
+			<item value="${item.good.price*item.nums }"/>
+			<item value="goodsbg"/>
+			<item value="选择数量"/>
+			<item value="$"/>
+			<item value="￥"/>
+		</list>
+		<list key="replacehistory">
+			<item value="."/>
+			<item value="employee"/>
+			<item value="ProductDir"/>
+			<item value="ProductDri"/>
+			<item value=""/>
+			<item value="&apos;"/>
+			<item value="JdbcUtil"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="356" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="437" key="DIALOG_HEIGHT"/>
+		<item value="1329" key="DIALOG_X_ORIGIN"/>
+		<item value="602" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

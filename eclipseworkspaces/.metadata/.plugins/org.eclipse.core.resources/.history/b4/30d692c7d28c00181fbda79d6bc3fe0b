@@ -1,0 +1,12 @@
+package file;
+
+import java.io.File;
+
+public class FileDemo {
+
+	
+	public static void main(String[] args) {
+		File file = new File("C:\\Users\\ºî½­ÌÎ\\Desktop\\javaÒì³£Àı×Ó");
+		System.out.println(file);
+	}
+}

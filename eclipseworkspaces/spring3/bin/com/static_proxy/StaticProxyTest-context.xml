@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+        <!-- 配置事务管理器 -->
+        <bean id="txManager" class="com.common.TransactionManager"/>
+        <!-- 配置DAO -->
+        <bean id="employeeDAAO" class="com.common.dao.impl.EmployeeDAOImpl"/>
+        <!-- 配置Service -->
+        <!-- 配置代理 -->
+        <bean id="employeeServiceProxy" class="com.static_proxy.EmployeeServiceProxy">
+        	<property name="txManager" ref="txManager"/>
+        	<!-- 配置真实对象 -->
+        	<property name="target">
+        	
+        		<bean class="com.common.service.impl.EmployeeServiceImpl">
+        		<property name="dao" ref="employeeDAAO"/>
+        		</bean>
+        	
+        	</property>
+        </bean>
+</beans>

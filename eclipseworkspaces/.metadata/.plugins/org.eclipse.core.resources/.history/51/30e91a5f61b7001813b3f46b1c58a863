@@ -1,0 +1,28 @@
+package com._520it_extends;
+
+import java.io.IOException;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+abstract public class MyGenericServlet implements Servlet{
+	private ServletConfig config;
+	public void init(ServletConfig config) throws ServletException {
+		this.config = config;
+	}
+
+	abstract public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException ;
+	public String getServletInfo() {
+		return null;
+	}
+
+	public void destroy() {
+		
+	}
+	public ServletConfig getServletConfig() {
+		return this.config;
+	}
+}

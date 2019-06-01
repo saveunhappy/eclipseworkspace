@@ -1,0 +1,104 @@
+package com.many2one;
+/**
+ * 针对单向many2one的测试
+ * @author HJT
+ *
+ */
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.junit.Test;
+
+import com.util.HibernateUtil;
+
+public class Many2OneTest {
+	@Test
+	public void testSave() throws Exception {
+		Department dept = new Department();
+		
+		dept.setName("d");
+		
+		Employee e1 = new Employee();
+		e1.setName("e1");
+		Employee e2 = new Employee();
+		e2.setName("e2");
+		
+		e1.setDept(dept);
+		e2.setDept(dept);
+		
+		Session session = HibernateUtil.getSession();
+		session.beginTransaction();
+		
+		session.save(dept);
+		session.save(e1);
+		session.save(e2);
+		
+		session.getTransaction().commit();
+		session.close();
+	}
+	@Test
+	public void testGet() throws Exception {
+		
+		Session session = HibernateUtil.getSession();
+		
+		Employee e = (Employee) session.get(Employee.class, 1L);
+		Department dept = e.getDept();
+		System.out.println(e);
+		System.out.println(dept);
+		
+		
+		session.close();
+		
+	}
+	/**
+	 * 测试分页的查询当前页的数据
+	 * @throws Exception
+	 */
+	@Test
+	public void test1() throws Exception {
+		int pageSize = 6;
+		int currentPage = 2;
+		Session session= HibernateUtil.getSession();
+		String hql = "select e from Employee e where e.name like?";
+		/**
+		 * 查询的时候一定要把创建表的方式改为update不能是create，否则数据删除，很难受
+		 */
+		List<Employee> es = session.createQuery(hql).setParameter(0, "%a%")
+			.setFirstResult((currentPage-1)*pageSize)//设置从什么位置开始查询，就是相当于limit的第一个问号
+			.setMaxResults(pageSize)//设置这次最多查询多少条数据，相当于limit的第二个问号
+			.list();
+		System.out.println(es);
+		session.close();
+	}
+	/**
+	 * 测试分页的查询总条数
+	 * @throws Exception
+	 */
+	@Test
+	public void test2() throws Exception {
+			 Session session = HibernateUtil.getSession();
+			 String hql = "select count(e) from Employee e where e.name like ?";
+			 Long totalCount = (Long)session.createQuery(hql).setParameter(0, "%a%").uniqueResult();
+			 System.out.println(totalCount);
+			 session.close();
+	}
+	
+	@Test
+	public void test3() throws Exception {
+			 Session session = HibernateUtil.getSession();
+			 String hql = "select count(e) from Employee e where e.name like :hh";
+			 Long totalCount = (Long)session.createQuery(hql).setParameter("hh", "%a%").uniqueResult();
+			 System.out.println(totalCount);
+			 session.close();
+	}
+	@Test
+	public void test4() throws Exception {
+		Session session = HibernateUtil.getSession();
+		String sql = "select e from Employee where e.id in (:ida)";
+		session.createQuery(sql).setParameterList("ida", new int[] {1,2,3,4});
+		
+	}
+}	

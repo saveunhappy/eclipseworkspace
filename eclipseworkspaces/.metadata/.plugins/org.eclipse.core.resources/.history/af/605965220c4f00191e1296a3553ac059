@@ -1,0 +1,5 @@
+package com.mypack.login;
+
+public class LoginAction {
+
+}

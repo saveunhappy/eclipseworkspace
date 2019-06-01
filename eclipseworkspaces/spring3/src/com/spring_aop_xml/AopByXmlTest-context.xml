@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        ">
+        <!-- 配置AOP:1.切面:what 2.切入位置where 3.切入时机when -->
+        <aop:config>
+        	<!--  what:做什么增强 -->
+        	<aop:aspect ref="txManager">
+        		<!-- where 在哪些包下的哪些类中的哪些方法上做增强 -->
+        		<aop:pointcut expression="execution(* com.common.service.*Service.*(..))" id="txPoint" />
+        		<!-- when -->
+        		<aop:after-returning method="begin" pointcut-ref="txPoint"/>
+        	</aop:aspect>
+        </aop:config>
+        
+        <aop:config>
+        <aop:aspect ref="txManager">
+        		<aop:pointcut expression="execution(com.common.service.impl.EmployeeService.*(..))" id="txPoint"/>
+        		<aop:before method="begin" pointcut-ref="txPoint"/>
+        </aop:aspect>
+        
+        </aop:config>
+        
+        <!-- 配置事务管理器 -->
+        <bean id="txManager" class="com.common.TransactionManager"/>
+        <!-- 配置DAO -->
+        <bean id="employeeDAO" class="com.common.dao.impl.EmployeeDAOImpl"/>
+        <!-- 配置Service -->
+        <bean id="employeeService-" class="com.common.service.impl.EmployeeServiceImpl">
+        			<property name="dao" ref="employeeDAO"/>
+        </bean>
+        
+</beans>

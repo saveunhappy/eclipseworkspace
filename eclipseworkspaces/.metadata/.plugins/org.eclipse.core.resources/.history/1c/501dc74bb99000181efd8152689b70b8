@@ -1,0 +1,13 @@
+package countThread;
+
+public class Demo3 {
+	public static void main(String[] args) {
+		CountThread2 ct = new CountThread2();
+		Thread t1 = new Thread(ct);
+		CountThread2 ct1 = new CountThread2();
+		Thread t2 = new Thread(ct1);
+		t1.start();
+		t2.start();
+		
+	}
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<contacts>
+	<linkman id="1">
+		<name>Will</name>
+		<email>will@</email>
+		<address>成都</address>
+		<group>嘎嘎</group>
+	</linkman>
+
+	<linkman id="2">
+		<name>Stef</name>
+		<email>lanyoteach@qq.com</email>
+		<address>成都</address>
+		<group>嘎嘎</group>
+	</linkman>
+
+</contacts>

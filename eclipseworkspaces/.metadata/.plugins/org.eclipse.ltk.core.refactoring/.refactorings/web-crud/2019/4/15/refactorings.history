@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com._520it._02_smis&apos; to &apos;com.mypack&apos;&#x0D;&#x0A;- Original project: &apos;web-crud&apos;&#x0D;&#x0A;- Original element: &apos;web-crud/src/com._520it._02_smis&apos;&#x0D;&#x0A;- Renamed element: &apos;web-crud/src/com.mypack&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;com._520it._02_smis&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com._520it._02_smis" name="com.mypack" qualified="false" references="true" stamp="1554798417193" textual="false" version="1.0"/>
+</session>

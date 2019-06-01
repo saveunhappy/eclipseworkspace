@@ -1,0 +1,28 @@
+package sss;
+
+public class Test {
+
+	public static void main(String[] args) {
+		StudentManagement sm = new StudentManagement();
+		Student s1 = new Student(1, "张三");
+		Student s2 = new Student(2, "李四");
+		Student s3 = new Student(3, "王五");
+
+		// 添加若干学生
+		sm.addStu(s1);
+		sm.addStu(s2);
+		sm.addStu(s3);
+		sm.queryOneStu(1);
+		// 查询所有学生
+
+		// 删除单个
+
+		// 查询所有学生
+
+		// 修改单个
+
+		// 查询所有学生
+
+	}
+
+}

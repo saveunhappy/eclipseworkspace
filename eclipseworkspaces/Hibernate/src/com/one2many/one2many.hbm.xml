@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.one2many">
+	
+	<class name="Employee">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="name"/>
+	</class>
+	
+	<class name="Department">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="name"/>
+	<set name="emps">
+		<key column="DEPT_ID"/>
+		<one-to-many class="Employee"/>
+	
+	</set>
+	
+	</class>
+
+
+</hibernate-mapping>

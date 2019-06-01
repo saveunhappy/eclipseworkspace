@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;EasyMVC&apos; to &apos;SpringMVC-hello-xml&apos;&#x0D;&#x0A;- Original element: &apos;EasyMVC&apos;&#x0D;&#x0A;- Renamed element: &apos;EasyMVC&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;EasyMVC&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=EasyMVC" name="SpringMVC-hello-xml" references="true" stamp="1552483035736" version="1.0"/>
+</session>

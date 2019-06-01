@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
+}
+
+.dijia{
+	display: inline-block;
+	width:60px;
+	margin-left: 250px;
+}
+.aaa{
+	margin-left: 71px;
+    margin-top: -60px;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+	width: 100px;
+}
+.zhengpin{
+	margin-top: 10px;
+}
+.baozhang{
+	display: inline-block;
+    float: left;
+    margin-left: 72px;
+    margin-top: -22px;
+    width: 100px;
+}
+.dijia1{
+	display: inline-block;
+	width:60px;
+	margin-left: 183px;
+}
+#kong{
+	display: inline-block;
+	height:100px;
+	width:100%;
+}
+.dddd{
+	margin-left: 285px;
+}
+.baozhang1{
+	display: inline-block;
+    float: left;
+    margin-left: 285px;
+    margin-top: -22px;
+}
+.dddd1{
+	margin-left: 155px;
+}
+.baozhang11{
+	display: inline-block;
+    float: left;
+    margin-left: 150px;
+    margin-top: -22px;
+}
+.kong11{
+	display: inline-block;
+	height:50px;
+	width:100%;
+}
+.sss{
+	display: inline-block;
+	margin-left: 536px;
+	width: 700px;
+	
+}
+.dd1{
+	display: inline-block;
+	width: 100%;
+	height:30px;
+}

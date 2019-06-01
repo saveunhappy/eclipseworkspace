@@ -1,0 +1,31 @@
+package com.autotable;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.mypack.domain.User;
+import com.util.HibernateUtil;
+
+public class App {
+	@Test
+	public void testName() throws Exception {
+		User u = new User();
+		u.setName("琦玉");
+		Session session = HibernateUtil.getSession();
+		Transaction beginTransaction = session.beginTransaction();
+		session.save(u);
+		beginTransaction.commit();
+		session.close();
+		//session.getSessionFactory().close();
+	}
+	
+	@Test
+	public void testGet() throws Exception {
+		Session session  = HibernateUtil.getSession();
+		User user = (User) session.get(User.class, 1L);
+		session.close();
+		System.out.println(user);
+	}
+}

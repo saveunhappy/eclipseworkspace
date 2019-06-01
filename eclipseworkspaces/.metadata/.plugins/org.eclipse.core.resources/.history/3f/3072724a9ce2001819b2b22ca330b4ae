@@ -1,0 +1,39 @@
+package web.upload;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+@WebServlet("/upload")
+public class UploadServlet extends HttpServlet{
+
+	private static final long serialVersionUID = 1L;
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//解释和检查请求，请求方式是否是post，请求编码是否是multiport/form-data	
+		boolean isMultipart = ServletFileUpload.isMultipartContent(req);
+		//创建工厂对象的目的就是来创建FileItem对象的
+		try {//FileItem对象：form表单中对表单控件的封装
+		FileItemFactory factory = new DiskFileItemFactory();
+		//创建文件上传处理器
+		ServletFileUpload upload = new ServletFileUpload(factory);
+		
+			List<FileItem> item = upload.parseRequest(req);
+			System.out.println(item);
+		} catch (FileUploadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

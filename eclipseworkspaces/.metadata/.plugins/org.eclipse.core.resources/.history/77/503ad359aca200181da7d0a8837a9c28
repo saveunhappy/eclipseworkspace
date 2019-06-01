@@ -1,0 +1,18 @@
+package day_21;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class Demo2 {
+	public static void main(String[] args) throws Exception {
+		Properties p = new Properties();
+		InputStream in = new FileInputStream("src/db.properties");
+		System.out.println(p);
+		p.load(in);
+		System.out.println(p);
+		System.out.println("’À∫≈"+p.getProperty("username"));
+		System.out.println("√‹¬Î"+p.getProperty("password"));
+	}
+}

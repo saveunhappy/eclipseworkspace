@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;druid-1.0.15.jar&apos; to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;product-crud3&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original element: &apos;druid-1.0.15.jar&apos;" description="Copy file" element1="webapp/WEB-INF/lib/druid-1.0.15.jar" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1545223605354" target="/spring/lib" units="0" version="1.0"/>
+</session>

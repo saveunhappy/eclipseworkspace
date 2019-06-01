@@ -1,0 +1,5 @@
+package com.ssh.query;
+
+public class PageResult {
+
+}

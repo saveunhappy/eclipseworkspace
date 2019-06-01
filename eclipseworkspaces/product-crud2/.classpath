@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/lombok.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/servlet-api.jar" sourcepath="E:/java的东西/java插件/apache-tomcat-7.0.90-src.zip"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/druid-1.0.15.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/mysql-connector-java-5.1.47-bin.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-lang3-3.8.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="webapp/WEB-INF/classes"/>
+</classpath>

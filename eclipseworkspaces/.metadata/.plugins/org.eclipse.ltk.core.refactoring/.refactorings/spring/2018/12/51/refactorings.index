@@ -1,0 +1,39 @@
+1545144258484	Copy file
+1545144263773	Rename resource 'applicationContext.xml'
+1545145473455	Copy elements
+1545145652152	Delete element
+1545145821132	Rename resource 'hello.xml'
+1545179525836	Copy elements
+1545179648540	Rename resource 'springTest.xml'
+1545181900996	Copy file
+1545181921235	Rename resource 'springTest.xml'
+1545182151444	Copy compilation unit
+1545182164177	Delete element
+1545182168935	Copy compilation unit
+1545182190017	Rename type 'SpringContainerTest'
+1545212721124	Copy compilation unit
+1545212732119	Copy file
+1545214979766	Copy elements
+1545214995756	Rename type 'BeanCreateTest'
+1545215004822	Rename resource 'BeanCreateTest-context.xml'
+1545215938626	Copy compilation unit
+1545220811171	Copy elements
+1545220813978	Copy compilation unit
+1545223853313	Copy file
+1545223869573	Rename package 'com.handjoin'
+1545223984382	Copy elements
+1545224030688	Rename type 'PropertyTest'
+1545224039506	Rename resource 'PropertyTest-context.xml'
+1545234186868	Move compilation unit
+1545234200450	Move compilation unit
+1545234223170	Delete element
+1545234301064	Delete element
+1545234345275	Copy compilation unit
+1545234347636	Delete element
+1545234349903	Delete element
+1545234862215	Copy file
+1545234870119	Rename resource 'DataSourceTest-context.xml'
+1545297978086	Copy package
+1545467910379	Copy file
+1545467936639	Copy file
+1545468522564	Copy file

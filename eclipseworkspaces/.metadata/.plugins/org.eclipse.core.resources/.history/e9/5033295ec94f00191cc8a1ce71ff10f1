@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default1" namespace="/" extends="struts-default">
+    
+    	<interceptors>
+    		<interceptor name="checkLogin" class="com.mypack.login.CheckLoginInterceptor"/>
+    		<interceptor-stack name="mySelf">
+    		<interceptor name="checkLogin" class="com.mypack.login.CheckLoginInterceptor"/>
+    		<interceptor-ref name="defaultStack"/>
+    		</interceptor-stack>
+    	</interceptors>
+    	<global-results>
+    		<result name="login">/login.jsp</result>
+    	</global-results>
+    
+		<action name="login" class="com.mypack.login.LoginAction" >
+		
+			<result name="success" type="redirectAction">main</result>
+		</action>
+    	<action name="main">
+    		<interceptor-ref name="checkLogin"/>
+    		<result>/welcome.jsp</result>
+    	</action>
+    </package>
+	
+
+</struts>

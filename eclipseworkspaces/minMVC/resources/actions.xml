@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+	<!-- 每一个action元素 -->
+	
+	<!-- 
+		action元素：表示每一个Action对象
+		name属性：请求该Action对象的资源名称
+		class属性：该Action对象的全限定名称
+		method属性：当前请求Action对象中的某一个方法
+	
+	
+	 -->
+	<action name="employee" class="com._520it._crm.web.action.EmployeeAction" method="execute">
+		<!-- 结果视图 -->
+		
+		<result name="list" type="dispatcher">/WEB-INF/views/student/list.jsp</result>
+		<result name="input" type="redirect">/WEB-INF/views/student/input.jsp</result>
+	</action>
+	<action name="department" class="com._520it._crm.web.action.DepartmentAction" method="execute"/>
+
+</actions>

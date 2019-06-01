@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+		<!-- 配置DAO -->
+		<!-- 配置service -->
+		<!-- 配置action -->
+		<!-- 
+		<bean id="userDAO" class="com.register.dao.impl.IUserDAOImpl"/>
+		<bean id="userService" class="com.register.service.impl.UserServiceImpl">
+			<property name="userDAO" ref="userDAO"/>
+		</bean>
+		<bean id="userAction" class="com.register.action.UserAction" scope="prototype">
+		
+										ref!!!!!
+			<property name="userService" value="userService"/>
+		</bean>
+		   -->
+		  
+		  
+		 <bean id="userDAO" class="com.register.dao.impl.IUserDAOImpl"/>
+		 <bean id="userService" class="com.register.service.impl.UserServiceImpl">
+		  	<property name="userDAO" ref="userDAO"/>
+		 </bean>
+		 <bean id="userAction" class="com.register.action.UserAction" scope="prototype">
+		  	<property name="userService" ref="userService"/>
+		  </bean>
+		  	 
+</beans>

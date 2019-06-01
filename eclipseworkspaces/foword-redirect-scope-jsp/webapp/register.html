@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<h3>注册页面</h3>
+		<form action="/day3/register" method="post">
+			
+			账号:<input type="text"  name="username"/><br />
+			密码：<input type="password" name="password" />
+			性别：
+				<input type="radio" name="gender" id="" value="boy" />男
+				<input type="radio" name="gender" id="" value="girl" />女<br />
+			爱好:<input type="checkbox" name="hobby" value="java" checked />java
+				<input type="checkbox" name="hobby" value="c"  />c
+				<input type="checkbox" name="hobby" value="objc" />objc<br />
+			城市：
+				<select name="city">
+					<option value="gz">广州</option>
+					<option value="fs">佛山</option>
+					<option value="dg">东莞</option>
+				</select><br />
+				介绍：
+				<textarea name="intro" rows="5" cols="15"></textarea><br />
+				<input type="submit" value="朕要注册" />
+			
+		</form>
+	</body>
+</html>

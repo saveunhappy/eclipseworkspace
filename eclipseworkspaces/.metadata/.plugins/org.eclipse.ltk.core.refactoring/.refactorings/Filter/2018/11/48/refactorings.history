@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ChacacterEncodingFilter.java&apos; to &apos;demo/src/com._zz._it.web.servlet&apos;&#x0D;&#x0A;- Original project: &apos;Filter&apos;&#x0D;&#x0A;- Destination element: &apos;demo/src/com._zz._it.web.servlet&apos;&#x0D;&#x0A;- Original element: &apos;com._520it._02hchacacterencoding.ChacacterEncodingFilter.java&apos;" description="Copy compilation unit" destination="=demo/src&lt;com._zz._it.web.servlet" element1="/src&lt;com._520it._02hchacacterencoding{ChacacterEncodingFilter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1543412958491" units="1" version="1.0"/>
+</session>

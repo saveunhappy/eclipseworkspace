@@ -1,0 +1,4 @@
+#Wed Jul 25 22:53:21 GMT+08:00 2018
+gender=male
+name=zhangsan
+age=18

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+        <bean id="employeeDAO" class="com.jdk__proxy.dao.impl.EmployeeDAOImpl"/>
+  	<!-- 	<bean id="employeeService" class="com.jdk__proxy.service.impl.EmployeeServiceImpl">
+  			<property name="dao" ref="employeeDAO"/>
+  		</bean> -->
+  		
+  		<bean id="transcationManager" class="com.jdk__proxy.tx.TransactionManager"/>
+  		
+  		
+  		<bean id="employeeServiceProxy" class="com.jdk__proxy.proxy.EmployeeServiceProxy">
+  			<property name="txManager" ref="transcationManager"/>
+  			<property name="target">
+  				<bean class="com.jdk__proxy.service.impl.EmployeeServiceImpl">
+  					<property name="dao" ref="employeeDAO"/>
+  					
+  				</bean>
+  			
+  			</property>
+  		
+  		</bean>
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.action.extension" value="action,do,,"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="helloPkg" extends="struts-default" namespace="/crm">
+	
+	<action name="hello" class="com._mypack._01.hello.HelloAction" method="sayHello">
+		<result name="will" type="redirect">
+			<param name="location">/views/hello/index.jsp</param>
+		</result>
+	</action>
+	
+	
+	</package>
+  
+
+</struts>

@@ -1,0 +1,21 @@
+package com.ssh.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+
+import com.ssh.dao.IEmployeeDAO;
+import com.ssh.domain.Employee;
+import com.ssh.query.EmployeeQueryObject;
+
+public class EmployeeDAOImpl extends  GenericDAOImpl<Employee> implements IEmployeeDAO{
+
+	public List<Employee> query(EmployeeQueryObject qo) {
+		String hql = "SELECT obj FROM Employee obj";
+		Session session = sessionFactory.getCurrentSession();
+		return null;
+	}
+
+
+
+}

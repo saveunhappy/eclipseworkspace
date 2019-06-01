@@ -1,0 +1,26 @@
+package com.ssh.query;
+
+import java.util.List;
+
+import lombok.Getter;
+@Getter
+public class PageResult {
+	private int totalCount;//结果总数：SQL查询
+	private List result;//结果集：SQL查询
+	
+	private int currentPage = 1;//当前页，用户传入
+	private int PageSize = 3;//每页最多显示多少条数据，用户传入
+	
+	private int totalPage;//总页数：计算
+	private int prevPage;//上一页：计算
+	private int nextPage;//下一页：计算
+	public PageResult(int totalCount, List result, int currentPage, int pageSize) {
+		this.totalCount = totalCount;
+		this.result = result;
+		this.currentPage = currentPage;
+		PageSize = pageSize;
+	}
+	
+	
+	
+}

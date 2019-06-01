@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.mapper.EmployeeMapper">
+
+	<select id="query" resultType="Employee">
+		select id,name,salary,sn,deptId from employee
+		<where>
+		<if test="minSalary!=null">
+			where salary >=#{minSalary}
+		
+		</if>
+		<if test="maxSalary!=null">
+		and salary &lt;=#{maxSalary}
+		</if>
+		<choose>
+			<when test="deptId">AND deptId = #{deptId}</when>
+			<otherwise>AND deptId IS NOT NULL</otherwise>
+		</choose> 
+		</where>
+	</select>
+	<delete id="batchDelect">
+	delete from employee where deptId in
+	
+	
+	<foreach collection="ids" open="(" close=")" separator="," item="id">
+	#{id}
+	</foreach>
+	
+	</delete>
+
+</mapper>

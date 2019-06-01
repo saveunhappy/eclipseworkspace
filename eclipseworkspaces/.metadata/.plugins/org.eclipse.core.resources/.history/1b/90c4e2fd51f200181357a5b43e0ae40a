@@ -1,0 +1,82 @@
+package com._520it._core.web.filter;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import com._520it._core.web.ActionConfig;
+import com._520it._crm.web.action.DepartmentAction;
+import com._520it._crm.web.action.EmployeeAction;
+
+//前端控制器
+public class ActionFilter implements Filter{
+	 //key用来存储<action>元素中的name属性
+	 //value用来存储<action>元素的封装类：ActionConfig对象
+	private Map<String,ActionConfig> actionConfigMap = new HashMap<>();
+	public void init(FilterConfig filterConfig) throws ServletException {
+		Document doc = this.getDocument();
+		//获取actions.xml文件中的<action>元素，每一个action元素都应该封装成一个ActionConfig对象
+		NodeList nodeList = doc.getElementsByTagName("action");
+		for (int i = 0; i < nodeList.getLength(); i++) {
+			Element actionEl = (Element) nodeList.item(i);//每一个action元素
+			String name = actionEl.getAttribute("name");
+			String className = actionEl.getAttribute("class");
+			String method = actionEl.getAttribute("method");
+			ActionConfig actionConfig = new ActionConfig(name, className, method);
+			actionConfigMap.put(name, actionConfig);
+		}
+		System.out.println(actionConfigMap);
+	}
+
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpServletResponse resp = (HttpServletResponse) response;
+		
+		//System.out.println("通用的操作");
+		//获取请求的资源名称
+		String requestUri = req.getRequestURI().substring(1);
+//		if("employee".equals(requestUri)) {
+//			EmployeeAction action = new EmployeeAction();
+//			action.execute();
+//		}else if("department".equals(requestUri)) {
+//			DepartmentAction action2 = new DepartmentAction();
+//			action2.execute();
+//		}
+		ActionConfig actionConfig = actionConfigMap.get(requestUri);
+		if(actionConfig == null) {
+			chain.doFilter(req, resp);
+		}
+		
+	}
+	private Document getDocument() {
+		InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("actions.xml");
+		try {
+			return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(in);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public void destroy() {
+		
+	}
+
+}

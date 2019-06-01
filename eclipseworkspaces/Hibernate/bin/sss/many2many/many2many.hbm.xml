@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="sss.many2many">
+	
+	<class name="Teacher">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="name"/>
+	<set name="stus" table="TEACHER_STUDENT">
+		<key column="TEACHER_ID"/>
+		<many-to-many class="Student" column="STUDENT_ID"/>
+	</set>
+	</class>
+	
+	<class name="Student">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="name"/>
+	<set name="teas" table="TEACHER_STUDENT" inverse="true">
+		<key column="STUDENT_ID"/>
+		<many-to-many class="Student" column="TEACHER_ID"/>
+	</set>
+	</class>
+
+
+</hibernate-mapping>

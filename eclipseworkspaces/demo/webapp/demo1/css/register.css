@@ -1,0 +1,85 @@
+	/*main start*/
+	
+	body {
+		background-color: #eee;
+	}
+	
+	#main {
+		width: 800px;
+		height: 520px;
+		padding: 0 30px;
+		margin: 30px auto 0;
+		margin-left:250px;
+		background-color: #fff;
+	}
+	
+	#main .login .login-title {
+		padding: 35px 0 10px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #ccc;
+		font-size: 23px;
+	}
+	
+	#main .login .table {
+		-webkit-user-select: none;
+		width: 100%;
+		border-collapse: collapse;
+	}
+	
+	#main .login .table tr td:first-child {
+		width: 80px;
+		height: 50px;
+		font-size: 15px;
+	}
+	
+	#main .login .table tr td:nth-child(2) {
+		width: 310px;
+		height: 60px;
+	}
+	
+	#main .login .table tr td:nth-child(2) input {
+		width: 285px;
+		height: 35px;
+		font-size: 16px;
+		text-indent: 5px;
+	}
+	
+	#main .login .table tr td:nth-child(2) input[type=submit] {
+		height: 45px;
+		background-color: #01b763;
+		border: none;
+		color: #fff;
+		font-size: 18px;
+		letter-spacing: 5px;
+	}
+	
+	#main .login .table tr td:nth-child(2) input[type=checkbox] {
+		width: 13px;
+		height: 13px;
+	}
+	
+	#main .login .table tr td:nth-child(3) {
+		color: #b19993;
+		font-size: 13px;
+	}
+	
+	#main .login .table tr:nth-child(5) td:nth-child(2) {
+		font-size: 14px;
+	}
+	
+	#main .login .table tr td:last-child p.tip.show {
+		display: block;
+	}
+	
+	#main .login .table tr td:last-child p.tip.hide {
+		display: none;
+	}
+	
+	#main .login .table tr td:last-child p.warn.show {
+		display: block;
+		color: #ff0036;
+	}
+	
+	#main .login .table tr td:last-child p.warn.hide {
+		display: none;
+	}

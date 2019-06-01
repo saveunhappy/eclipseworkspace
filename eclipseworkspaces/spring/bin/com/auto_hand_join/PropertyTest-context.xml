@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 属性注入：简单类型-->
+	
+	<bean id="emp" class="com.handjoin.Employee">
+		<property name="name" value="will"/>
+		<property name="age" value="17"/>
+		<property name="salary" value="800"/>
+		<property name="url" value="http://weibo.com/iwiller"/>
+	
+	</bean>
+	<!-- 属性注入：复合类型 -->
+	<bean id="employeeDAO" class="com.handjoin.EmployeeDAO"/>
+	<bean id="employeeService" class="com.handjoin.EmployeeService">
+		<property name="dao" ref="employeeDAO"/>
+	</bean>
+	<!-- 属性注入：集合类型 -->
+	<bean id="collectionBean" class="com.handjoin.CollectionBean">
+		<property name="set">
+			<set>
+				<value>set1</value>
+				<value>set2</value>
+				<value>set3</value>
+			</set>
+		
+		</property>
+		<property name="list">
+		
+			<list>
+				<value>list1</value>
+				<value>list1</value>
+				<value>list1</value>
+			</list>
+		</property>
+		<property name="arr">
+			<array>
+				<value>ss</value>
+				<value>ss</value>
+				<value>ss</value>
+			</array>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="asd" value="ddd"/>
+			</map>
+		</property>
+		<!-- 
+		<property name="prop">
+			<props>
+				<prop key="haha">hehe</prop>
+			</props>
+		</property>
+		 -->
+		<property name="prop">
+			<value>
+				p1=v1
+				p2=v2
+				p3=v4
+			</value>
+		</property>
+	</bean>
+</beans>

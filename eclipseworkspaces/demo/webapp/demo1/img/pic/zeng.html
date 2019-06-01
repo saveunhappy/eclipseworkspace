@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script>
+			$(document).ready(function(){
+				
+				//删除按钮的点击事件
+				$("[value=删除]").click(function(){
+					//获取所有的多选按钮标签给数组a
+//					var a=$("[name=del]");
+//					//对数组a中的每个标签进行遍历
+//					for (i=0;i<a.length;i++) {
+//						//判断数组中多选标签的选中状态是否是被选中
+//						if(a[i].checked ==true){
+//							//选中了，将遍历到的此标签所在的行标签删除
+//							$(a[i]).parent().parent().remove();
+//						}
+//					}
+					
+					if($(":checked")){
+						$(":checked").parent().parent().remove();
+					}
+				});
+				
+				//添加按钮的点击事件
+				$("[value=添加]").click(function(){
+					//获取编号输入框中的值，并转化为数值类型
+					var $num = $("[name=num]").val();
+					var num = parseInt($num);//"2"--->2
+					//获取图书类型输入框中的值
+					var $type = $("[name=type]").val();
+					//判断编号输入框和图书类型输入框中是否有内容
+					if($num !="" &&$type !=""){
+						//如果都有内容，创建3个td单元格标签和1个行标签。
+						//第一个单元格中放编号输入框中获取的内容，第二个单元格里放图书类型输入框中的内容
+						var $td1 = $("<td></td>");
+						$td1.text($num);
+						var $td2 = $("<td></td>");
+						$td2.text($type);
+						//第三个单元格中放多选按钮标签
+						var $td3 = $("<td><input type='checkbox' name='del'></td>");
+						//新建的行标签中依次加入3个单元格标签
+						var $tr = $("<tr></tr>");
+						$tr.append($td1);
+						$tr.append($td2);
+						$tr.append($td3);
+					}
+					//通过多选按钮标签的父标签的上一个标签的上一个标签找到所有含有编号数字的单元格标签放到数组td中
+					var td = $("[name=del]").parent().prev().prev();
+					//获取td数组中的最后一个标签中的内容转化成数值类型的值
+					var tdLasttex = $(td[td.length-1]).text();
+					var tdLasttexNum = parseInt(tdLasttex);					
+				
+					//对td数组进行遍历
+					for(i=0;i<td.length;i++){
+						//获取当前编号单元格中的内容转化成数值类型
+						var $tex = $(td[i]).text();
+						var tex = parseInt($tex);
+						//判断输入框中的编号是否等于已有的编号
+						if(num==tex){
+							//如果相等则报错，并结束此循环体
+							alert("不能添加相同编号");
+							break;
+						}else{
+							if(num>tdLasttexNum){
+								//输入框中的编号大于数组中的最后一个编号及最大编号。
+								//则将新建的行标签添加到表格内容的最后面
+								$tr.appendTo($("tbody"));
+							}
+							if(num<tex){
+								//输入框中的编号小于数组中的编号
+								//则新创建的行标签添加到此单元格所在的行标签前面，结束循环体
+								$tr.insertBefore($(td[i]).parent());
+								break;
+							}
+						}
+					}
+				});
+				
+				//查找按钮的点击事件
+				$("[value=查找]").click(function(){
+					//获取查找输入框中的内容，即用户输入的图书类型
+					var selTypetex = $("[name=selType]").val();
+					//通过多选标签的父标签的上一个标签找到所有图书类型所在单元格放到td数组中
+					var td = $("[name=del]").parent().prev();
+					//遍历内容是图书类型的单元格所在的数组
+					for (i=0;i<td.length;i++) {
+						//将每一个单元格所在的行标签背景都变白
+						$(td[i]).parent().css("background","white");
+						//获取当前遍历到的单元格中的内容
+						var tdTex = $(td[i]).text();
+						if(selTypetex == tdTex){
+							//如果查找输入框中的内容与当前单元格中的内容相等
+							//则改变当前单元格所在的行标签的背景颜色为红色
+							$(td[i]).parent().css("background","red");
+						}
+					}
+				});
+				
+				//修改按钮的点击事件
+				$("[value=修改]").click(function(){
+					//获取编号输入框中的值，并转化为数值类型
+					var $num = $("[name=num]").val();
+					var num = parseInt($num);
+					//获取图书类型输入框中的值
+					var $type = $("[name=type]").val();
+					//通过多选按钮标签的父标签的上一个标签的上一个标签找到所有含有编号数字的单元格标签放到数组td中
+					var td = $("[name=del]").parent().prev().prev();
+					//对td数组进行遍历
+					for(i=0;i<td.length;i++){
+						//获取当前编号单元格中的内容转化成数值类型
+						var tdNum0 = $(td[i]).text();
+						var tdNum1 = parseInt(tdNum0);
+						if(num == tdNum1){
+							//如果编号输入框中的编号和当前单元格中的编号相等
+							//则将此单元格的下一个单元格中的内容改为图书类型输入框中的内容，然后结束此循环体
+							$(td[i]).next().text($type);
+							break;
+						}else if(i==td.length-1){
+							//如果遍历到最后一个元素时，编号输入框中的编号还是没有相等的单元格中的编号
+							//则证明此编号在单元格中不存在。
+							alert("此编号不存在！");
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		查找书籍类型：
+		<br />
+		<input type="text" name="selType" />
+		<input type="button" value="查找" />
+		<table border="1">
+			<tbody>
+				<tr><th>编号</th><th>图书类型</th><th>删除</th></tr>
+				<tr><td>2</td><td>童话</td><td><input type="checkbox" name="del"></td></tr>
+				<tr><td>3</td><td>奇幻</td><td><input type="checkbox" name="del"></td></tr>
+				<tr><td>4</td><td>修仙</td><td><input type="checkbox" name="del"></td></tr>
+				<tr><td>6</td><td>军事</td><td><input type="checkbox" name="del"></td></tr>
+			</tbody>
+		</table>
+		<input type="button" value="删除" />
+		<input type="button" value="添加" />
+		<input type="button" value="修改" />
+		<br />
+		编号：<input type="text" name="num" />
+		<br />
+		类型：<input type="text" name="type" />
+	</body>
+</html>

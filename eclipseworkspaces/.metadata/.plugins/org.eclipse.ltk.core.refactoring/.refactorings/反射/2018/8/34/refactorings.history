@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;reflect.User&apos; to &apos;Person&apos;&#x0D;&#x0A;- Original project: &apos;反射&apos;&#x0D;&#x0A;- Original element: &apos;reflect.User&apos;&#x0D;&#x0A;- Renamed element: &apos;reflect.Person&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;User&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;reflect{Demo3.java[User" matchStrategy="1" name="Person" qualified="false" references="true" similarDeclarations="false" stamp="1534834290322" textual="false" version="1.0"/>
+</session>

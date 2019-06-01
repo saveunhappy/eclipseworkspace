@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.mapper.SystemUserMapper">
+  <resultMap id="BaseResultMap" type="com.mypack.domain.SystemUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="t_username" jdbcType="VARCHAR" property="t_username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from `t_user`
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.mypack.domain.SystemUser" useGeneratedKeys="true">
+    insert into `t_user` (t_username, password)
+    values (#{t_username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mypack.domain.SystemUser">
+    update `t_user`
+    set t_username = #{t_username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, t_username, password
+    from `t_user`
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, t_username, password
+    from `t_user`
+  </select>
+</mapper>

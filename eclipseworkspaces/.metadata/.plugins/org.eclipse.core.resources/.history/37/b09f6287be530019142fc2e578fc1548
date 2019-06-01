@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- <constant name="struts.action.excludePattern" value="/webapp/.*?" /> -->
+    <constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+			<default-interceptor-ref name="paramsPrepareParamsStack"/>
+		<action name="*_*" class="{1}Action" method="{2}">
+			<result name="success" type="redirectAction">{1}</result>
+			<result name="list">/WEB-INF/views/{1}/list.jsp</result>
+			<result name="input">/WEB-INF/views/{1}/input.jsp</result>
+		</action>
+	
+		
+		
+    </package>
+
+
+</struts>

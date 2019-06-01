@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cascade">
+	
+	<class name="SaleBill">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="sn"/>
+	<!-- 
+	
+		cascade:级联
+		0:cascade属性只能写在集合上
+		1：什么是级联？就是对于主对象执行一个操作的时候，能够自动遍历这个集合		
+		2：级联选项：
+			1:save-update:就是对于主对象执行保存或者修改的时候，能够自动遍历这个集合，并且对集合中的对象执行操作:
+				1:持久化临时的对象
+				2：修改游离的对象
+			2:delete:就是对于主对象执行删除的时候，能够自动遍历这个集合，并且对集合中的对象执行删除操作:
+			all:save-update+delete
+	 -->
+	<set name="items" inverse="true" cascade="all-delete-orphan">
+		<key column="BILL_ID"/>
+		<one-to-many class="SaleBillItem"/>
+	</set>
+	</class>
+	
+	<class name="SaleBillItem">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="product"/>
+	<many-to-one name="bill" column="BILL_ID"/>
+	</class>
+
+
+</hibernate-mapping>

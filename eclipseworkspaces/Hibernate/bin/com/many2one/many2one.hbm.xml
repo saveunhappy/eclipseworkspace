@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.many2one">
+	
+	<class name="Employee">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="name"/>
+	<many-to-one name="dept" column="DEPT_ID"/>
+	</class>
+	
+	<class name="Department">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+	<property name="name"/>
+	</class>
+
+
+</hibernate-mapping>

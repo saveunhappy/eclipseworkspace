@@ -1,0 +1,18 @@
+package com.ssh.query;
+
+import lombok.Getter;
+import lombok.Setter;
+
+/*
+ *	员工的高级查询对象，封装了高级查询信息 
+ */
+public class EmployeeQueryObject {
+	@Getter@Setter
+	private String keyword;//查询名称或者邮箱
+	@Getter@Setter
+	private Long deptId;
+	public String getQuery() {
+		return null;
+	}
+	
+}
