@@ -9,7 +9,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>4.0.0.RELEASE</org.springframework.version>
 		<hibernate.version>4.2.15.Final</hibernate.version>
-		<struts.version>2.3.24</struts.version>
+		<struts.version>2.5.22</struts.version>
 	</properties>
 
 	<dependencies>
